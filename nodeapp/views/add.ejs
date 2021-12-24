@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fetch using MySQL and Node.js</title>
+</head>
+
+<body>
+    <div class="table-data">
+        <h2>Add Line</h2>
+
+        <form action="/<%=table%>/add" method="get">
+            <% data.forEach((x) => { %>
+                <div>
+                    <label><%=x.Field %>: </label>
+                    <% if(x.Type.includes('varchar')) { %>
+                        <input type="text" name="<%=x.Field%>" />
+                    <% } else if(x.Type.includes('int')) { %>
+                        <input type="number" name="<%=x.Field%>" />
+                    <% } else if(x.Type.includes('date')) { %>
+                        <!-- values returned from the db dont work here for date -->
+                        <input type="date" name="<%=x.Field%>"/>
+                    <% } %>
+                </div>
+            <% }) %>
+            <input type="submit"/>
+        </form>
+    </div>
+</body>
+
+</html>
