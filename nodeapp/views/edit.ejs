@@ -10,20 +10,22 @@
         <h2>Edit Line</h2>
 
         <form action="/<%=table%>/edit/<%=element[data[0].Field]%>" method="get">
-            <% data.forEach((x) => { %>
+            <% data.forEach((x)=> { %>
                 <div>
-                    <label><%=x.Field %>: </label>
+                    <label>
+                        <%=x.Field %>:
+                    </label>
                     <% if(x.Type.includes('varchar')) { %>
                         <input type="text" name="<%=x.Field%>" value="<%=element[x.Field]%>" />
-                    <% } else if(x.Type.includes('int')) { %>
-                        <input type="number" name="<%=x.Field%>" value="<%=element[x.Field]%>" />
-                    <% } else if(x.Type.includes('date')) { %>
-                        <!-- values returned from the db dont work here for date -->
-                        <input type="date" name="<%=x.Field%>" value="<%=element[x.Field]%>" />
-                    <% } %>
+                        <% } else if(x.Type.includes('int')) { %>
+                            <input type="number" name="<%=x.Field%>" value="<%=element[x.Field]%>" />
+                            <% } else if(x.Type.includes('date')) { %>
+                                <!-- values returned from the db dont work here for date -->
+                                <input type="date" name="<%=x.Field%>" value="<%=element[x.Field]%>" />
+                                <% } %>
                 </div>
-            <% }) %>
-            <input type="submit"/>
+                <% }) %>
+                    <input type="submit" />
         </form>
     </div>
 </body>

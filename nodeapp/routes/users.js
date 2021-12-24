@@ -19,9 +19,9 @@ router.get('/edit/:id', function (req, res) {
   //   if (err) throw err;
   //   res.render('user-list', { title: 'Acteur List', listData: data });
   // });
-  
-  
-  
+
+
+
   console.log(req.query);
 });
 
