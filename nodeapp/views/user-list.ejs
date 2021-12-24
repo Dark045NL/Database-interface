@@ -10,11 +10,14 @@
         <h2>Display Data using Node.js & MySQL</h2>
         <table border="1">
             <tr>
-                <th>S.N</th>
-                <th>Full Name</th>
-                <th>Email Address</th>
-                <th>City</th>
-                <th>Country</th>
+                <th>ActeurID</th>
+                <th>Voornaam</th>
+                <th>Achternaam</th>
+                <th>Geslacht</th>
+                <th>Geboortedatum</th>
+                <th>Woonplaats/th>
+                <th>Land</th>
+                <th>Specialisme</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -22,19 +25,28 @@
             <% if(userData.length!=0){ var i=1; userData.forEach(function(data){ %>
                 <tr>
                     <td>
-                        <%=i; %>
+                        <%=data.ActeurID %>
                     </td>
                     <td>
-                        <%=data.fullName %>
+                        <%=data.Voornaam %>
                     </td>
                     <td>
-                        <%=data.emailAddress %>
+                        <%=data.Achternaam %>
                     </td>
                     <td>
-                        <%=data.city %>
+                        <%=data.Geslacht %>
                     </td>
                     <td>
-                        <%=data.country %>
+                        <%=data.Geboortedatum %>
+                    </td>
+                    <td>
+                        <%=data.Woonplaats %>
+                    </td>
+                    <td>
+                        <%=data.Land %>
+                    </td>
+                    <td>
+                        <%=data.Specialisme %>
                     </td>
                     <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
                     <td><a href="/users/delete/<%=data.id%>">Delete</a></td>
@@ -42,7 +54,7 @@
                 <% i++; }) %>
                     <% } else{ %>
                         <tr>
-                            <td colspan="7">No Data Found</td>
+                            <td colspan="10">No Data Found</td>
                         </tr>
                         <% } %>
         </table>
