@@ -10,14 +10,12 @@
         <h2><%=title%></h2>
         <table border="1">
             <tr>
-                <th>ActeurID</th>
-                <th>Voornaam</th>
-                <th>Achternaam</th>
-                <th>Geslacht</th>
-                <th>Geboortedatum</th>
-                <th>Woonplaats</th>
+                <th>Productiehuis_ID</th>
+                <th>Naam</th>
+                <th>Adres</th>
+                <th>Plaats</th>
+                <th>Postcode</th>
                 <th>Land</th>
-                <th>Specialisme</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -25,31 +23,25 @@
             <% if(listData.length!=0){ var i=1; listData.forEach(function(data){ %>
                 <tr>
                     <td>
-                        <%=data.ActeurID %>
+                        <%=data.Productiehuis_ID %>
                     </td>
                     <td>
-                        <%=data.Voornaam %>
+                        <%=data.Naam %>
                     </td>
                     <td>
-                        <%=data.Achternaam %>
+                        <%=data.Adres %>
                     </td>
                     <td>
-                        <%=data.Geslacht %>
+                        <%=data.Plaats %>
                     </td>
                     <td>
-                        <%=data.Geboortedatum %>
-                    </td>
-                    <td>
-                        <%=data.Woonplaats %>
+                        <%=data.Postcode %>
                     </td>
                     <td>
                         <%=data.Land %>
                     </td>
-                    <td>
-                        <%=data.Specialisme %>
-                    </td>
-                    <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
-                    <td><a href="/users/delete/<%=data.id%>">Delete</a></td>
+                    <td><a href="/productiehuis/edit/<%=data.id%>">Edit</a></td>
+                    <td><a href="/productiehuis/delete/<%=data.id%>">Delete</a></td>
                 </tr>
                 <% i++; }) %>
                     <% } else{ %>

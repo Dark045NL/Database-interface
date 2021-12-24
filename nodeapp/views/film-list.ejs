@@ -10,14 +10,12 @@
         <h2><%=title%></h2>
         <table border="1">
             <tr>
-                <th>ActeurID</th>
-                <th>Voornaam</th>
-                <th>Achternaam</th>
-                <th>Geslacht</th>
-                <th>Geboortedatum</th>
-                <th>Woonplaats</th>
-                <th>Land</th>
-                <th>Specialisme</th>
+                <th>FilmID</th>
+                <th>Titel</th>
+                <th>Release_Date</th>
+                <th>Korte_inhoud</th>
+                <th>Rating</th>
+                <th>Productiehuis_ID</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -25,31 +23,25 @@
             <% if(listData.length!=0){ var i=1; listData.forEach(function(data){ %>
                 <tr>
                     <td>
-                        <%=data.ActeurID %>
+                        <%=data.FilmID %>
                     </td>
                     <td>
-                        <%=data.Voornaam %>
+                        <%=data.Titel %>
                     </td>
                     <td>
-                        <%=data.Achternaam %>
+                        <%=data.Release_Date %>
                     </td>
                     <td>
-                        <%=data.Geslacht %>
+                        <%=data.Korte_inhoud %>
                     </td>
                     <td>
-                        <%=data.Geboortedatum %>
+                        <%=data.Rating %>
                     </td>
                     <td>
-                        <%=data.Woonplaats %>
+                        <%=data.Productiehuis_ID %>
                     </td>
-                    <td>
-                        <%=data.Land %>
-                    </td>
-                    <td>
-                        <%=data.Specialisme %>
-                    </td>
-                    <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
-                    <td><a href="/users/delete/<%=data.id%>">Delete</a></td>
+                    <td><a href="/film/edit/<%=data.id%>">Edit</a></td>
+                    <td><a href="/film/delete/<%=data.id%>">Delete</a></td>
                 </tr>
                 <% i++; }) %>
                     <% } else{ %>

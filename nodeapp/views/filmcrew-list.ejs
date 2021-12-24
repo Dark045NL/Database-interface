@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fetch using MySQL and Node.js</title>
+</head>
+
+<body>
+    <div class="table-data">
+        <h2><%=title%></h2>
+        <table border="1">
+            <tr>
+                <th>CrewID</th>
+                <th>FilmID</th>
+                <th>Functie</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            <% if(listData.length!=0){ var i=1; listData.forEach(function(data){ %>
+                <tr>
+                    <td>
+                        <%=data.CrewID %>
+                    </td>
+                    <td>
+                        <%=data.FilmID %>
+                    </td>
+                    <td>
+                        <%=data.Functie %>
+                    </td>
+                    <td><a href="/filmcrew/edit/<%=data.id%>">Edit</a></td>
+                    <td><a href="/filmcrew/delete/<%=data.id%>">Delete</a></td>
+                </tr>
+                <% i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="10">No Data Found</td>
+                        </tr>
+                        <% } %>
+        </table>
+    </div>
+</body>
+
+</html>

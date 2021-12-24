@@ -10,7 +10,7 @@
         <h2><%=title%></h2>
         <table border="1">
             <tr>
-                <th>ActeurID</th>
+                <th>CrewID</th>
                 <th>Voornaam</th>
                 <th>Achternaam</th>
                 <th>Geslacht</th>
@@ -25,7 +25,7 @@
             <% if(listData.length!=0){ var i=1; listData.forEach(function(data){ %>
                 <tr>
                     <td>
-                        <%=data.ActeurID %>
+                        <%=data.CrewID %>
                     </td>
                     <td>
                         <%=data.Voornaam %>
@@ -48,8 +48,8 @@
                     <td>
                         <%=data.Specialisme %>
                     </td>
-                    <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
-                    <td><a href="/users/delete/<%=data.id%>">Delete</a></td>
+                    <td><a href="/crew/edit/<%=data.id%>">Edit</a></td>
+                    <td><a href="/crew/delete/<%=data.id%>">Delete</a></td>
                 </tr>
                 <% i++; }) %>
                     <% } else{ %>
