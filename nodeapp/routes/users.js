@@ -14,25 +14,20 @@ router.get('/', function (req, res) {
 router.get('/edit/:id', function (req, res) {
   //TODO: UPDATE QUERY
   //all the values are in req.query and then just render
-  // var sql = 'SELECT * FROM acteur';
-  // db.query(sql, function (err, data, fields) {
-  //   if (err) throw err;
-  //   res.render('user-list', { title: 'Acteur List', listData: data });
-  // });
+
 
 
 
   console.log(req.query);
+  //instead of rerendering the table just link back to the main route
+  res.redirect('/acteur');
 });
 
 router.get('/add', function (req, res) {
   //TODO: INSERT QUERY
   //all the values are in req.query and then just render
-  // var sql = 'SELECT * FROM acteur';
-  // db.query(sql, function (err, data, fields) {
-  //   if (err) throw err;
-  //   res.render('user-list', { title: 'Acteur List', listData: data });
-  // });
+
+  res.redirect('/acteur');
 });
 
 router.get('/delete/:id', function (req, res) {
